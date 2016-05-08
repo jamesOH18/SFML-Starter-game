@@ -22,7 +22,7 @@ public:
 	void ProcessInput(sf::Event);
 	void Update(sf::Time);
 
-private:
+protected:
 	/// texure of diamond wallpaper square
 	sf::Texture m_splashTexture;
 	/// sprite tiled to create background
