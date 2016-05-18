@@ -55,15 +55,28 @@ Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), stati
 /// </summary>
 void Game::LoadContent()
 {
-	if (!arialFont.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
+	if (!m_arialFont.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
 	{
 		std::cout << "error with font file file";
 	}
-	m_licenceScreen.Initialise(arialFont);
-	m_splashScreen.Initialise(arialFont);
-	m_mainMenu.Initialise(arialFont);
+	m_licenceScreen.Initialise(m_arialFont);
+	m_splashScreen.Initialise(m_arialFont);
+	m_mainMenu.Initialise(m_arialFont);
 	m_mainGame.Initialise();
-	m_helpPage.Initialise(arialFont);
+	m_helpPage.Initialise(m_arialFont);
+#ifdef TEST_FPS
+	updateFrameCount = 0;
+	drawFrameCount = 0;
+	secondTime = sf::Time::Zero;
+	updateFps.setFont(m_arialFont);
+	updateFps.setPosition(20, 300);		
+	updateFps.setCharacterSize(24);
+	updateFps.setColor(sf::Color::White);
+	drawFps.setFont(m_arialFont);
+	drawFps.setPosition(20, 350);
+	drawFps.setCharacterSize(24);
+	drawFps.setColor(sf::Color::White);
+#endif // TEST_FPS
 }
 
 /// <summary>
@@ -81,10 +94,30 @@ void Game::run()
 		while (timeSinceLastUpdate > timePerFrame)
 		{		
 			timeSinceLastUpdate -= timePerFrame;
+
 			ProcessEvents();
-			Update(timePerFrame);			
+			Update(timePerFrame);		
+#ifdef TEST_FPS
+			secondTime += timePerFrame;
+			updateFrameCount++;
+			if (secondTime.asSeconds() > 1)
+			{
+				char bufferDps[256];
+				char bufferUps[256];
+				sprintf_s(bufferUps, "%d UPS", updateFrameCount-1);
+				updateFps.setString(bufferUps);
+				sprintf_s(bufferDps, "%d DPS", drawFrameCount);
+				drawFps.setString(bufferDps);
+				updateFrameCount = 0;
+				drawFrameCount = 0;
+				secondTime = sf::Time::Zero;
+			}
+#endif // TEST_FPS
 		}
 		Render();
+#ifdef TEST_FPS
+		drawFrameCount++;
+#endif // TEST_FPS
 	}
 }
 /// <summary>
@@ -173,5 +206,9 @@ void Game::Render()
 	default:
 		break;
 	}	
+#ifdef TEST_FPS
+	m_Window.draw(updateFps);
+	m_Window.draw(drawFps);
+#endif // TEST_FPS
 	m_Window.display();
 }

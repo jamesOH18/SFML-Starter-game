@@ -1,5 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
+// comment out the following line for release mode
+#define TEST_FPS
 #include "targetver.h"
 #include <stdio.h>
 #include <tchar.h>
@@ -51,9 +53,17 @@ protected:
 	void	LoadContent();
 	
 	/// /// variable
-	sf::Font arialFont; 
+	sf::Font m_arialFont; 
 	/// variable
 	sf::RenderWindow m_Window;
+#ifdef TEST_FPS
+	sf::Text updateFps;
+	sf::Text drawFps;
+	sf::Time secondTime;
+	int updateFrameCount;
+	int drawFrameCount;
+
+#endif // TEST_FPS
 	
 	//instances of classes used to handle the different behaviours needed in the complete game
 	/// instance used to run licence screen
