@@ -1,10 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
-// comment out the following line for release mode
+// Use the vs debug / release mode effect of defineing _DEBUG to turn on/off
+// features  used only in degub mode
+#ifdef _DEBUG
 #define TEST_FPS
+#endif // _DEBUG
+
 #include "targetver.h"
 #include <stdio.h>
 #include <tchar.h>
+ 
 
 #include "Licence.h"
 #include "SplashScreen.h"

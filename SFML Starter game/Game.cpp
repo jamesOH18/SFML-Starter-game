@@ -55,6 +55,7 @@ Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), stati
 /// </summary>
 void Game::LoadContent()
 {
+	int m_gold;
 	if (!m_arialFont.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
 	{
 		std::cout << "error with font file file";
@@ -64,6 +65,13 @@ void Game::LoadContent()
 	m_mainMenu.Initialise(m_arialFont);
 	m_mainGame.Initialise();
 	m_helpPage.Initialise(m_arialFont);
+	
+	m_gold = 0;
+#ifdef STARTRICH
+	m_gold = 1000;
+#endif // STARTRICH
+
+
 #ifdef TEST_FPS
 	updateFrameCount = 0;
 	drawFrameCount = 0;

@@ -54,6 +54,8 @@ void Player::Fall()
 		m_playerSprite.setPosition(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y + 1);
 	}
 }
+
+
 /// <summary>
 /// @ brief move the player left.
 /// 
