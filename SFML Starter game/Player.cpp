@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include <iostream>
 #include "Player.h"
 #include "Game.h"

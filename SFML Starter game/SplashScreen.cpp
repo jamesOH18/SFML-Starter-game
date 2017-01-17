@@ -1,4 +1,4 @@
- #include "stdafx.h"
+
 #include <iostream> 
 #include "SplashScreen.h"
 #include "Game.h"
