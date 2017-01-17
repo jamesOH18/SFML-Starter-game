@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #ifdef _DEBUG 
 #pragma comment(lib,"sfml-graphics-d.lib") 
 #pragma comment(lib,"sfml-audio-d.lib") 
@@ -30,7 +30,7 @@ Written by Peter Lowe May 2015
 Total Project Time ~ 10 hours*/
 
 
-int main(int argc, _TCHAR* argv[])
+int main()
 { 
 	Game game; 
 	game.run(); 
