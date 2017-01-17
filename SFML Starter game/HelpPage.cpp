@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "HelpPage.h"
 #include "Game.h"
 #include <iostream>
