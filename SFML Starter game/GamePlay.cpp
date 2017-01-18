@@ -9,7 +9,7 @@
 GamePlay::GamePlay()
 {
 }
-
+ 
 
 GamePlay::~GamePlay()
 {
@@ -33,7 +33,7 @@ void GamePlay::Initialise()
 	m_backgroundSprite.setScale(scalex, scaley);
 	m_backgroundSprite.setPosition(0, 0);
 		
-	m_player.Initialise();
+	m_player.initialise();
 	
 }
 /// <summary>
@@ -63,23 +63,23 @@ void GamePlay::Update(sf::Time time)
 {
 	if (m_jumpKeyPressed)
 	{
-		m_player.Jump();
+		m_player.jump();
 	}
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		m_player.Left();
+		m_player.left();
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		m_player.Right();
+		m_player.right();
 	}
-	if (m_player.Departed())	
+	if (m_player.departed())	
 	{		
 		Game::currentState = GameState::MainMenu;
 		m_player.resetPosition();
 	}
-	m_player.Update(time);
+	m_player.update(time);
 	m_jumpKeyPressed = false;
 }
 /// <summary>
@@ -92,5 +92,5 @@ void GamePlay::Update(sf::Time time)
 void GamePlay::Render(sf::RenderWindow& window)
 {
 	window.draw(m_backgroundSprite);
-	m_player.Render(window);
+	m_player.render(window);
 }

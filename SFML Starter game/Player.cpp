@@ -22,7 +22,7 @@ Player::~Player()
 /// <summary>
 /// @brief load & setup player sprite and roadHeight
 /// </summary>
-void Player::Initialise()
+void Player::initialise()
 {
 	if (!m_playerTexture.loadFromFile("ASSETS/IMAGES/mario.png"))
 	{
@@ -37,7 +37,7 @@ void Player::Initialise()
 /// 
 /// reacting to a key press event raise the position by 100
 /// </summary>
-void Player::Jump()
+void Player::jump()
 {
 	m_playerSprite.setPosition(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y - 100);	
 }
@@ -47,7 +47,7 @@ void Player::Jump()
 /// 
 /// move the player position down one so long as he is above raod
 /// </summary>
-void Player::Fall()
+void Player::fall()
 {
 	if (m_playerSprite.getPosition().y < m_roadHeight)
 	{
@@ -64,7 +64,7 @@ void Player::Fall()
 /// sprite but keep player head in same location and set scale
 /// to minus 1
 /// </summary>
-void Player::Left()
+void Player::left()
 {
 	m_playerSprite.setPosition(m_playerSprite.getPosition().x - 1, m_playerSprite.getPosition().y);
 	if (m_playerSprite.getScale().x == 1)
@@ -80,7 +80,7 @@ void Player::Left()
 /// check if player position is off screen if so the return true
 /// </summary>
 /// <returns>game over or not</returns>
-bool Player::Departed()
+bool Player::departed()
 {
 	if (m_playerSprite.getPosition().x < 0 || m_playerSprite.getPosition().x > Game::screenWidth)
 	{
@@ -104,7 +104,7 @@ void Player::resetPosition()
 /// sprite but keep player head in same location and set scale
 /// to plus 1
 /// </summary>
-void Player::Right()
+void Player::right()
 {
 	m_playerSprite.setPosition(m_playerSprite.getPosition().x + 1, m_playerSprite.getPosition().y);
 	if (m_playerSprite.getScale().x == -1)
@@ -120,16 +120,16 @@ void Player::Right()
 /// movement is iniated from the gameplay class
 /// </summary>
 /// <param name="time">update delta time</param>
-void Player::Update(sf::Time time)
+void Player::update(sf::Time time)
 {
-	Fall();	
+	fall();	
 }
 
 /// <summary>
 /// @brief draw player sprite.
 /// </summary>
 /// <param name="window">refrence to main render window</param>
-void Player::Render(sf::RenderWindow& window)
+void Player::render(sf::RenderWindow& window)
 {
 	window.draw(m_playerSprite);
 }
