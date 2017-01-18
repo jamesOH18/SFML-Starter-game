@@ -26,13 +26,12 @@ public:
 	void Left();
 	void Right();
 	bool Departed();
+	void resetPosition();
 protected:
 	/// Texture for palyer mario on cart
 	sf::Texture m_playerTexture;
 	/// sprite used to represent player
 	sf::Sprite m_playerSprite;
-	/// player location (top left)
-	sf::Vector2f M_playerPosition;
 	/// position on background where player should stop falling
 	float m_roadHeight;
 

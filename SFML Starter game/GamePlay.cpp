@@ -77,6 +77,7 @@ void GamePlay::Update(sf::Time time)
 	if (m_player.Departed())	
 	{		
 		Game::currentState = GameState::MainMenu;
+		m_player.resetPosition();
 	}
 	m_player.Update(time);
 	m_jumpKeyPressed = false;

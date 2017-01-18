@@ -92,6 +92,10 @@ bool Player::Departed()
 		return false;
 	}
 }
+void Player::resetPosition()
+{
+	m_playerSprite.setPosition(Game::screenWidth / 2, m_roadHeight);
+}
 /// <summary>
 /// @ brief move the player right.
 /// 
