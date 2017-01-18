@@ -60,7 +60,7 @@ void Game::LoadContent()
 	{
 		std::cout << "error with font file file";
 	}
-	m_licenceScreen.Initialise(m_arialFont);
+	m_licenceScreen.initialise(m_arialFont);
 	m_splashScreen.Initialise(m_arialFont);
 	m_mainMenu.Initialise(m_arialFont);
 	m_mainGame.Initialise();
@@ -169,7 +169,7 @@ void Game::Update(sf::Time time)
 	switch (currentState)
 	{
 	case GameState::Licence:
-		m_licenceScreen.Update(time);
+		m_licenceScreen.update(time);
 		break;
 	case GameState::Splash:
 		m_splashScreen.Update(time);
@@ -197,7 +197,7 @@ void Game::Render()
 	switch (currentState)
 	{	
 	case GameState::Licence:
-		m_licenceScreen.Render(m_Window);
+		m_licenceScreen.render(m_Window);
 		break;
 	case GameState::Splash:
 		m_splashScreen.Render(m_Window);			
