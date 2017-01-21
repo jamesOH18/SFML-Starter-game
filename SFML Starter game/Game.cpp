@@ -67,7 +67,7 @@ void Game::loadContent()
 	m_splashScreen.initialise(m_arialFont);
 
 	m_mainMenu.Initialise(m_arialFont);
-	m_mainGame.Initialise();
+	m_mainGame.initialise();
 	m_helpPage.Initialise(m_arialFont);
 	
 	m_gold = 0;
@@ -157,7 +157,7 @@ void Game::processEvents()
 			m_helpPage.ProcessInput(event);
 			break;
 		case GameState::Game:
-			m_mainGame.ProcessInput(event);
+			m_mainGame.processInput(event);
 			break;
 		default:
 			break;
@@ -185,7 +185,7 @@ void Game::update(sf::Time time)
 		m_helpPage.Update(time);
 		break;
 	case GameState::Game:
-		m_mainGame.Update(time);
+		m_mainGame.update(time);
 		break;
 	default:
 		break;
@@ -213,7 +213,7 @@ void Game::render()
 		m_helpPage.Render(m_Window);
 		break;
 	case GameState::Game:
-		m_mainGame.Render(m_Window);
+		m_mainGame.render(m_Window);
 		break;
 	default:
 		break;

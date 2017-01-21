@@ -20,7 +20,7 @@ GamePlay::~GamePlay()
 /// 
 /// load and set scale on texture then initialise player
 /// </summary>
-void GamePlay::Initialise()
+void GamePlay::initialise()
 {
 	if (!m_backgroundTexture.loadFromFile("ASSETS/IMAGES/background.jpg"))
 	{
@@ -42,7 +42,7 @@ void GamePlay::Initialise()
 /// check for up arrow key press before main loop calls update
 /// </summary>
 /// <param name="event">sf event from os</param>
-void GamePlay::ProcessInput(sf::Event event)
+void GamePlay::processInput(sf::Event event)
 {
 	if (event.type == sf::Event::KeyPressed)
 	{
@@ -59,7 +59,7 @@ void GamePlay::ProcessInput(sf::Event event)
 /// then update player and check if game over
 /// </summary>
 /// <param name="time">update delta time</param>
-void GamePlay::Update(sf::Time time)
+void GamePlay::update(sf::Time time)
 {
 	if (m_jumpKeyPressed)
 	{
@@ -89,7 +89,7 @@ void GamePlay::Update(sf::Time time)
 /// 
 /// </summary>
 /// <param name="window">refrence to main render window</param>
-void GamePlay::Render(sf::RenderWindow& window)
+void GamePlay::render(sf::RenderWindow& window)
 {
 	window.draw(m_backgroundSprite);
 	m_player.render(window);

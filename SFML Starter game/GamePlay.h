@@ -15,10 +15,10 @@ class GamePlay
 public:
 	GamePlay();
 	~GamePlay();	
-	void Initialise();
-	void Render(sf::RenderWindow&);
-	void ProcessInput(sf::Event);
-	void Update(sf::Time);
+	void initialise();
+	void render(sf::RenderWindow&);
+	void processInput(sf::Event);
+	void update(sf::Time);
 
 protected:
 	/// texture of landscape used as background
