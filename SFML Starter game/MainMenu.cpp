@@ -29,7 +29,7 @@ MainMenu::~MainMenu()
 /// for each button and positions on screen
 /// </summary>
 /// <param name="font">Refrence to font loaded in main game</param>
-void MainMenu::Initialise(sf::Font& font)
+void MainMenu::initialise(sf::Font& font)
 {
 	m_topOffset = 50;	
 	m_verticalSpacing = 100;
@@ -72,7 +72,7 @@ void MainMenu::Initialise(sf::Font& font)
 /// </summary>
 /// <param name="time">update delta time</param>
 /// <param name="window">refrence to main render window</param>
-void MainMenu::Update(sf::Time time, sf::Window& window)
+void MainMenu::update(sf::Time time, sf::Window& window)
 {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
@@ -100,7 +100,7 @@ void MainMenu::Update(sf::Time time, sf::Window& window)
 ///  draw menu text over buttons
 /// </summary>
 /// <param name="window">refrence to main render window</param>
-void MainMenu::Render(sf::RenderWindow& window)
+void MainMenu::render(sf::RenderWindow& window)
 {
 	for (int i = 0; i < m_optionCount; i++)
 	{

@@ -66,7 +66,7 @@ void Game::loadContent()
 	m_licenceScreen.initialise(m_arialFont);
 	m_splashScreen.initialise(m_arialFont);
 
-	m_mainMenu.Initialise(m_arialFont);
+	m_mainMenu.initialise(m_arialFont);
 	m_mainGame.initialise();
 	m_helpPage.initialise(m_arialFont);
 	
@@ -179,7 +179,7 @@ void Game::update(sf::Time time)
 		m_splashScreen.update(time);
 		break;
 	case GameState::MainMenu:
-		m_mainMenu.Update(time, m_Window);
+		m_mainMenu.update(time, m_Window);
 		break;
 	case GameState::Help:
 		m_helpPage.update(time);
@@ -207,7 +207,7 @@ void Game::render()
 		m_splashScreen.render(m_Window);			
 		break;
 	case GameState::MainMenu:
-		m_mainMenu.Render(m_Window);
+		m_mainMenu.render(m_Window);
 		break;
 	case GameState::Help:
 		m_helpPage.render(m_Window);

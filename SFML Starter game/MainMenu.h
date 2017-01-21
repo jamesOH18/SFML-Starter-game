@@ -16,9 +16,9 @@ public:
 	MainMenu();
 	~MainMenu();
 
-	void Initialise(sf::Font&);
-	void Render(sf::RenderWindow&);
-	void Update(sf::Time, sf::Window&);
+	void initialise(sf::Font&);
+	void render(sf::RenderWindow&);
+	void update(sf::Time, sf::Window&);
 
 protected:
 	
