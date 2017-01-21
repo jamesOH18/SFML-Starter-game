@@ -18,21 +18,20 @@ class Player
 public:
 	Player();
 	~Player();
-	void Initialise();
-	void Render(sf::RenderWindow&);	
-	void Update(sf::Time);
-	void Jump();
-	void Fall();
-	void Left();
-	void Right();
-	bool Departed();
+	void initialise();
+	void render(sf::RenderWindow&);	
+	void update(sf::Time);
+	void jump();
+	void fall();
+	void left();
+	void right();
+	bool departed();
+	void resetPosition();
 protected:
 	/// Texture for palyer mario on cart
 	sf::Texture m_playerTexture;
 	/// sprite used to represent player
 	sf::Sprite m_playerSprite;
-	/// player location (top left)
-	sf::Vector2f M_playerPosition;
 	/// position on background where player should stop falling
 	float m_roadHeight;
 
