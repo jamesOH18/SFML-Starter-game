@@ -29,7 +29,7 @@ SplashScreen::~SplashScreen()
 /// splash image.
 /// </summary>
 /// <param name="font">Refrence to font loaded in main game</param>
-void SplashScreen::Initialise(sf::Font& font)
+void SplashScreen::initialise(sf::Font& font)
 {
 	m_font = font;
 	// load texture and setup sprite
@@ -62,7 +62,7 @@ void SplashScreen::Initialise(sf::Font& font)
 /// pass on to update loop
 /// </summary>
 /// <param name="event">event paased from main game loop</param>
-void SplashScreen::ProcessInput(sf::Event event)
+void SplashScreen::processInput(sf::Event event)
 {
 	if (event.type == sf::Event::KeyPressed)
 	{
@@ -79,7 +79,7 @@ void SplashScreen::ProcessInput(sf::Event event)
 /// reset boolean used to signify keypress event
 /// </summary>
 /// <param name="time">update delta time</param>
-void SplashScreen::Update(sf::Time time)
+void SplashScreen::update(sf::Time time)
 {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
@@ -97,7 +97,7 @@ void SplashScreen::Update(sf::Time time)
 /// Draw the background texture and the press space message 
 /// </summary>
 /// <param name="window">refrence to manin tender window</param>
-void SplashScreen::Render(sf::RenderWindow& window)
+void SplashScreen::render(sf::RenderWindow& window)
 {
 	window.draw(m_splashSprite);
 	window.draw(m_message);

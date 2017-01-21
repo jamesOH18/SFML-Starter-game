@@ -17,10 +17,10 @@ public:
 	SplashScreen();
 	~SplashScreen();
 
-	void Initialise(sf::Font&);
-	void Render(sf::RenderWindow&);
-	void ProcessInput(sf::Event);
-	void Update(sf::Time);
+	void initialise(sf::Font&);
+	void render(sf::RenderWindow&);
+	void processInput(sf::Event);
+	void update(sf::Time);
 
 protected:
 	/// texure of diamond wallpaper square
