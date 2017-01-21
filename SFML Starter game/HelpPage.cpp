@@ -24,7 +24,7 @@ HelpPage::~HelpPage()
 /// esc key will return to main menu
 /// </summary>
 /// <param name="font">Refrence to font loaded in main game</param>
-void HelpPage::Initialise(sf::Font& font)
+void HelpPage::initialise(sf::Font& font)
 {
 	m_font = font;	
 
@@ -44,7 +44,7 @@ void HelpPage::Initialise(sf::Font& font)
 /// Check if esc key is pressed and return to main menu
 /// </summary>
 /// <param name="event">event passed from process events in main loop</param>
-void HelpPage::ProcessInput(sf::Event event)
+void HelpPage::processInput(sf::Event event)
 {
 	if (event.type == sf::Event::KeyPressed)
 	{
@@ -62,7 +62,7 @@ void HelpPage::ProcessInput(sf::Event event)
 /// always set vool to false;
 /// </summary>
 /// <param name="time">update delta time</param>
-void HelpPage::Update(sf::Time time)
+void HelpPage::update(sf::Time time)
 {
 	if (m_exitPressed)
 	{
@@ -77,7 +77,7 @@ void HelpPage::Update(sf::Time time)
 /// Draw the sf::Text object message.
 /// </summary>
 /// <param name="window">refrence to main render window</param>
-void HelpPage::Render(sf::RenderWindow& window)
+void HelpPage::render(sf::RenderWindow& window)
 {	
 	window.draw(m_message);
 }

@@ -68,7 +68,7 @@ void Game::loadContent()
 
 	m_mainMenu.Initialise(m_arialFont);
 	m_mainGame.initialise();
-	m_helpPage.Initialise(m_arialFont);
+	m_helpPage.initialise(m_arialFont);
 	
 	m_gold = 0;
 #ifdef STARTRICH
@@ -154,7 +154,7 @@ void Game::processEvents()
 		case GameState::MainMenu:			
 			break;
 		case GameState::Help:
-			m_helpPage.ProcessInput(event);
+			m_helpPage.processInput(event);
 			break;
 		case GameState::Game:
 			m_mainGame.processInput(event);
@@ -182,7 +182,7 @@ void Game::update(sf::Time time)
 		m_mainMenu.Update(time, m_Window);
 		break;
 	case GameState::Help:
-		m_helpPage.Update(time);
+		m_helpPage.update(time);
 		break;
 	case GameState::Game:
 		m_mainGame.update(time);
@@ -210,7 +210,7 @@ void Game::render()
 		m_mainMenu.Render(m_Window);
 		break;
 	case GameState::Help:
-		m_helpPage.Render(m_Window);
+		m_helpPage.render(m_Window);
 		break;
 	case GameState::Game:
 		m_mainGame.render(m_Window);
