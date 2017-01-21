@@ -52,10 +52,10 @@ public:
 	static GameState currentState;
 
 protected:
-	void	ProcessEvents();
-	void	Update(sf::Time);
-	void	Render();
-	void	LoadContent();
+	void	processEvents();
+	void	update(sf::Time);
+	void	render();
+	void	loadContent();
 	
 	/// /// variable
 	sf::Font m_arialFont; 

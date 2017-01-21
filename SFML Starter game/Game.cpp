@@ -45,7 +45,7 @@ GameState Game::currentState = GameState::Licence;
 /// </summary>
 Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), static_cast<int>(Game::screenHeight)), "SMFL Game",sf::Style::Default)
 {			
-	LoadContent();
+	loadContent();
 	m_Window.setKeyRepeatEnabled(false);
 }
 /// <summary>
@@ -53,7 +53,7 @@ Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), stati
 /// 
 /// after loading the font pass a refrence to font resourse to other class iniatilisers
 /// </summary>
-void Game::LoadContent()
+void Game::loadContent()
 {
 	int m_gold;
 	if (!m_arialFont.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
@@ -64,7 +64,7 @@ void Game::LoadContent()
 
 
 	m_licenceScreen.initialise(m_arialFont);
-	m_splashScreen.Initialise(m_arialFont);
+	m_splashScreen.initialise(m_arialFont);
 
 	m_mainMenu.Initialise(m_arialFont);
 	m_mainGame.Initialise();
@@ -101,14 +101,14 @@ void Game::run()
 	sf::Time timePerFrame = sf::seconds(1.f / 60.f);
 	while (m_Window.isOpen())
 	{
-		ProcessEvents();
+		processEvents();
 		timeSinceLastUpdate += clock.restart();
 		while (timeSinceLastUpdate > timePerFrame)
 		{		
 			timeSinceLastUpdate -= timePerFrame;
 
-			ProcessEvents();
-			Update(timePerFrame);		
+			processEvents();
+			update(timePerFrame);		
 #ifdef TEST_FPS
 			secondTime += timePerFrame;
 			updateFrameCount++;
@@ -126,7 +126,7 @@ void Game::run()
 			}
 #endif // TEST_FPS
 		}
-		Render();
+		render();
 #ifdef TEST_FPS
 		drawFrameCount++;
 #endif // TEST_FPS
@@ -135,7 +135,7 @@ void Game::run()
 /// <summary>
 /// @brief call the appropiate processEvents method ofr currentstate
 /// </summary>
-void Game::ProcessEvents()
+void Game::processEvents()
 {
 	sf::Event event;
 	while (m_Window.pollEvent(event))
@@ -168,7 +168,7 @@ void Game::ProcessEvents()
 /// @brief call the update method corresponding to the current game state
 /// </summary>
 /// <param name="time">update delta time</param>
-void Game::Update(sf::Time time)
+void Game::update(sf::Time time)
 {
 	switch (currentState)
 	{
@@ -195,7 +195,7 @@ void Game::Update(sf::Time time)
 /// <summary>
 /// @brief call the renderer for the current game state
 /// </summary>
-void Game::Render()
+void Game::render()
 {
 	m_Window.clear();
 	switch (currentState)
