@@ -17,9 +17,9 @@ public:
 	Licence();
 	~Licence();
 	
-	void Initialise(sf::Font&);
-	void Render(sf::RenderWindow&);
-	void Update(sf::Time);
+	void initialise(sf::Font&);
+	void render(sf::RenderWindow&);
+	void update(sf::Time);
 
 protected:
 	/// local refrence to font used by whole game

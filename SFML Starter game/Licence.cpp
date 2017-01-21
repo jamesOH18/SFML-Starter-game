@@ -20,7 +20,7 @@ Licence::~Licence()
 /// will proceed to splash page after 2 seconds
 /// </summary>
 /// <param name="font">Refrence to font loaded in main game</param>
-void Licence::Initialise(sf::Font& font)
+void Licence::initialise(sf::Font& font)
 {
 
 	m_font = font;
@@ -43,7 +43,7 @@ void Licence::Initialise(sf::Font& font)
 /// when greater than 2 second proceed to splash screen
 /// </summary>
 /// <param name="time">update delta time</param>
-void Licence::Update(sf::Time time)
+void Licence::update(sf::Time time)
 {
 	m_cumulativeTime += time;
 	if (m_cumulativeTime.asSeconds() > 0.8)
@@ -55,7 +55,7 @@ void Licence::Update(sf::Time time)
 /// @brief draw thw licence text.
 /// </summary>
 /// <param name="window">refrence to main render window</param>
-void Licence::Render(sf::RenderWindow& window)
+void Licence::render(sf::RenderWindow& window)
 {
 	window.draw(m_message);
 }
