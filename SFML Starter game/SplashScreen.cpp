@@ -44,8 +44,8 @@ void SplashScreen::initialise(sf::Font& font)
 	
 	//setup message
 	m_message.setFont(m_font);
-	m_message.setString("Press any space to continue");
-	m_message.setCharacterSize(32);
+	m_message.setString(" pete was here Press any space to continue");
+	m_message.setCharacterSize(12);
 	m_message.setStyle(sf::Text::Bold);
 	m_message.setColor(sf::Color::White);
 	// centre message

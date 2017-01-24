@@ -37,7 +37,7 @@ void MainMenu::initialise(sf::Font& font)
 	m_leftOffset = (Game::screenWidth - m_buttonWidth)/2;
 	m_buttonHeight = 50;
 	int textDropOffset = 10;
-	sf::String m_menuTexts[] = { "Play", "Help", "Exit" };
+	sf::String m_menuTexts[] = { "Play", "Help", "Exit x" };
 
 	m_font = font;
 	if (!m_buttonTexture.loadFromFile("ASSETS/IMAGES/button.png"))
