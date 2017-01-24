@@ -25,7 +25,7 @@ void Licence::initialise(sf::Font& font)
 
 	m_font = font;
 	m_message.setFont(m_font);
-	m_message.setString("Hand Made by Pete");
+	m_message.setString("Hand Made by Peter");
 	m_message.setCharacterSize(24);
 	m_message.setColor(sf::Color::White);
 
