@@ -83,11 +83,11 @@ void Game::loadContent()
 	updateFps.setFont(m_arialFont);
 	updateFps.setPosition(20, 300);		
 	updateFps.setCharacterSize(24);
-	updateFps.setColor(sf::Color::White);
+	updateFps.setFillColor(sf::Color::White);
 	drawFps.setFont(m_arialFont);
 	drawFps.setPosition(20, 350);
 	drawFps.setCharacterSize(24);
-	drawFps.setColor(sf::Color::White);
+	drawFps.setFillColor(sf::Color::White);
 #endif // TEST_FPS
 }
 

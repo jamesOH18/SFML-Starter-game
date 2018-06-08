@@ -53,7 +53,7 @@ void MainMenu::initialise(sf::Font& font)
 
 		m_buttonTexts[i].setFont(m_font);
 		m_buttonTexts[i].setString(m_menuTexts[i]);
-		m_buttonTexts[i].setColor(sf::Color::White);
+		m_buttonTexts[i].setFillColor(sf::Color::White);
 		m_buttonTexts[i].setCharacterSize(24);
 		sf::FloatRect textSize = m_buttonTexts[i].getGlobalBounds();
 		float textOffset = (m_buttonWidth - textSize.width) / 2;

@@ -31,7 +31,7 @@ void HelpPage::initialise(sf::Font& font)
 	m_message.setFont(m_font);
 	m_message.setString("Use the arrow keys to move \nMario left or right\nUp arrow will make him jump\nMove off the stage to exit\nEscape to return to Menu");
 	m_message.setCharacterSize(24);
-	m_message.setColor(sf::Color::White);
+	m_message.setFillColor(sf::Color::White);
 
 	sf::FloatRect textSize = m_message.getGlobalBounds();
 	float xposition = Game::screenWidth / 2 - textSize.width / 2;

@@ -27,7 +27,7 @@ void Licence::initialise(sf::Font& font)
 	m_message.setFont(m_font);
 	m_message.setString("Hand Made by Peter");
 	m_message.setCharacterSize(24);
-	m_message.setColor(sf::Color::White);
+	m_message.setFillColor(sf::Color::White);
 
 	sf::FloatRect textSize = m_message.getGlobalBounds();
 	float xPosition = Game::screenWidth / 2 - textSize.width / 2;
